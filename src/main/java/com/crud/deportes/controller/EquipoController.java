@@ -1,8 +1,11 @@
 package com.crud.deportes.controller;
 
+import com.crud.deportes.dto.EquipoDto;
 import com.crud.deportes.entity.Equipo;
 import com.crud.deportes.service.EquipoService;
+import com.crud.deportes.utils.response.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +28,7 @@ public class EquipoController {
     }
 
     @GetMapping("/equipo/{id}")
-    public Equipo obtenerEquipos(@PathVariable Long id){
+    public ResponseEntity<ApiResponse<EquipoDto>> obtenerEquipos(@PathVariable Long id){
         return equipoService.obtenerEquipoPorId(id);
     }
 
