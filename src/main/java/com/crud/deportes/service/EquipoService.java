@@ -1,14 +1,17 @@
 package com.crud.deportes.service;
 
+import com.crud.deportes.dto.EquipoDto;
 import com.crud.deportes.entity.Equipo;
+import com.crud.deportes.utils.response.ApiResponse;
+import org.springframework.http.RequestEntity;
+import org.springframework.http.ResponseEntity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public interface EquipoService {
-    Equipo crearEquipo(Equipo equipo);
+   Equipo crearEquipo(Equipo equipo);
 
-    Equipo obtenerEquipoPorId(Long id);
+    ResponseEntity<ApiResponse<EquipoDto>> obtenerEquipoPorId(Long id);
     List<Equipo> obtenerTodos();
     void eliminarEquipo(Long id);
 
